@@ -1,0 +1,25 @@
+.PHONY: compile
+
+ifeq ($(V),1)
+Q=
+else
+Q=@
+endif
+
+%.o: %.c
+	$(Q)gcc -c -no-pie -m32 $^ -o $@
+
+%.bin: %.o
+	$(Q)gcc -no-pie -m32 $^ -o $@
+
+%.elf: %.bin
+	$(Q)readelf -a $^ > $@
+
+%.S: %.bin
+	$(Q)objdump -D $^ > $@
+
+run-%: %.bin
+	$(Q)./$<
+
+clean:
+	$(Q)rm -f *.o *.bin *.elf
