@@ -8,6 +8,6 @@ int main() {
   printf("%p\n", system);
   printf("got_start is %p\n", got_start);
   ((void **)got_start)[4] = system;
-  puts("echo 'wtf'");
+  puts("ls -l");
   return 0;
 }
