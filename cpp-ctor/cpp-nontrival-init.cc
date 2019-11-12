@@ -9,7 +9,6 @@ class A {
   std::unique_ptr<int> m;
 
 public:
-  /* _ZN1AC1Ev */
   A() : m(new int(count)) { std::cout << "construct " << count++ << "th A\n"; }
 
   ~A() { std::cout << "destruct " << --count << "th A\n"; }

@@ -22,4 +22,4 @@ run-%: %.bin
 	$(Q)./$<
 
 clean:
-	$(Q)rm -f *.o *.bin *.elf
+	$(Q)rm -f *.o *.bin *.elf *.S
