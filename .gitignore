@@ -4,3 +4,5 @@
 *.bin
 *.elf
 *.[oO]
+Thumbs.db
+Thumbs.db:encryptable
